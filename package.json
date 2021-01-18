@@ -1,0 +1,13 @@
+{
+  "name": "local-static-server",
+  "version": "1.0.0",
+  "description": "本地静态服务器",
+  "main": "mian.js",
+  "scripts": {
+	"run": "node ./main.js"
+  },
+  "author": "陈皮皮",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
