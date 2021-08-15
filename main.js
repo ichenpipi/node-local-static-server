@@ -1,9 +1,6 @@
 const express = require('express');
 const path = require('path');
 
-// 创建实例
-let app = express();
-
 // 默认端口
 let port = 6789;
 
@@ -16,14 +13,18 @@ for (let i = 2; i < process.argv.length; i += 2) {
 	}
 }
 
+// 创建实例
+const app = express();
+
 // 监听请求
 app.use((req, res, next) => {
 	console.log('访问文件', req.url);
 	next();
 });
 
-// 使用中间件创建静态目录
-app.use(express.static(path.join(__dirname, 'public')));
+// 静态目录
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
 // 启动服务并监听端口
 app.listen(port, () => {
